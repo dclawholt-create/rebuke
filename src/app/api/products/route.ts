@@ -10,7 +10,7 @@ export async function GET() {
   }
 
   const { data, error } = await supabase
-    .from("products")
+    .from("rebuke_products")
     .select("slug, name, subtitle, description, long_description, price, size, roast, notes, badge, ministry_use, palette")
     .eq("is_active", true)
     .order("sort_order", { ascending: true });

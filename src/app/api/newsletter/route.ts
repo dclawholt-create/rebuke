@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const { error } = await supabase.from("newsletter_signups").upsert(
+    const { error } = await supabase.from("rebuke_newsletter_signups").upsert(
       {
         email,
         source: "website",
