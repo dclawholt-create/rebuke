@@ -50,7 +50,6 @@ That reduces naming collisions with your main church app while keeping everythin
 
 ## Suggested next steps
 
-- Add row-level security policies for public reads and controlled writes
 - Add real product photography
 - Add a real cart and checkout flow using Stripe
 - Add a Supabase admin flow for products

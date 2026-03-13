@@ -35,6 +35,27 @@ create table if not exists public.rebuke_newsletter_signups (
 create index if not exists rebuke_newsletter_signups_created_at_idx
   on public.rebuke_newsletter_signups (created_at desc);
 
+alter table public.rebuke_products enable row level security;
+alter table public.rebuke_newsletter_signups enable row level security;
+
+drop policy if exists "Public can read active rebuke products" on public.rebuke_products;
+create policy "Public can read active rebuke products"
+  on public.rebuke_products
+  for select
+  to anon, authenticated
+  using (is_active = true);
+
+drop policy if exists "Public can insert rebuke newsletter signups" on public.rebuke_newsletter_signups;
+create policy "Public can insert rebuke newsletter signups"
+  on public.rebuke_newsletter_signups
+  for insert
+  to anon, authenticated
+  with check (
+    email is not null
+    and position('@' in email) > 1
+    and source in ('website', 'landing-page', 'wholesale-form')
+  );
+
 insert into public.rebuke_products (
   slug,
   name,
