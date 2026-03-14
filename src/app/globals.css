@@ -11,6 +11,10 @@
   --accent-strong: #f0bf83;
   --brown: #4a2f23;
   --gold-glow: rgba(211, 163, 107, 0.28);
+  --font-geist-sans:
+    "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --font-geist-mono:
+    "SFMono-Regular", "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 @theme inline {

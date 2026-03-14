@@ -31,6 +31,8 @@ npm run dev
 
 Then open <http://localhost:3000>
 
+The default scripts are configured to use Webpack for local development and builds.
+
 ## Supabase setup
 
 1. Create or choose your Supabase project
