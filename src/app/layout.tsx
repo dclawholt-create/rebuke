@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { CartDrawer } from "@/components/cart-drawer";
 import { CartProvider } from "@/components/cart-provider";
+import { ogImageUrl } from "@/lib/brand";
 import "./globals.css";
-
-const ogImageUrl = "https://i.postimg.cc/Qx3R2MgL/og-image.png";
 
 export const metadata: Metadata = {
   title: "Rebuke Coffee",

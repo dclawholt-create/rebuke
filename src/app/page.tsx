@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/brand-logo";
 import { CartPreview } from "@/components/cart-preview";
 import { CatalogGrid } from "@/components/catalog-grid";
 import { Header } from "@/components/header";
@@ -69,6 +70,9 @@ export default function Home() {
                   style={{ backgroundImage: `url(${editorialCoffeeImage})` }}
                 >
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,7,5,0.08),rgba(10,7,5,0.8))]" />
+                  <div className="absolute right-5 top-5 rounded-2xl border border-white/10 bg-black/35 px-4 py-3 backdrop-blur-md">
+                    <BrandLogo className="h-8 w-28" imageClassName="object-right" sizes="112px" />
+                  </div>
                   <div className="absolute inset-x-0 bottom-0 p-6">
                     <div className="inline-flex rounded-full border border-white/15 bg-black/30 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white/70">
                       Brand direction
@@ -230,6 +234,14 @@ export default function Home() {
               The form on the right is wired for Supabase. Once your environment variables are added and the SQL is run,
               this becomes a real lead capture flow for pastors, admins, and interested buyers.
             </p>
+            <div className="mt-10 rounded-[1.75rem] border border-white/10 bg-white/4 p-6">
+              <div className="text-xs uppercase tracking-[0.3em] text-white/45">Brand mark</div>
+              <BrandLogo className="mt-4 h-10 w-56" imageClassName="object-left" sizes="224px" />
+              <p className="mt-4 max-w-md text-sm leading-7 text-white/56">
+                Keep the mark concentrated at key trust points: the header, a restrained hero stamp, and the closing
+                contact block.
+              </p>
+            </div>
           </div>
 
           <div className="rounded-[1.75rem] border border-white/10 bg-black/30 p-6 sm:p-8">
