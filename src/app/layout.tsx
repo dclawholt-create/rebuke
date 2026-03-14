@@ -7,11 +7,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Rebuke Coffee",
   description:
-    "A sleek coffee brand storefront for I Am Church — premium coffee that helps fund ministry.",
+    "Rebuke Coffee is operated by I AM Church and sold to other churches as a premium coffee option for hospitality ministries that also supports our church ministry.",
   openGraph: {
     title: "Rebuke Coffee",
     description:
-      "A sleek coffee brand storefront for I Am Church — premium coffee that helps fund ministry.",
+      "Rebuke Coffee is operated by I AM Church and sold to other churches as a premium coffee option for hospitality ministries that also supports our church ministry.",
     type: "website",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rebuke Coffee",
     description:
-      "A sleek coffee brand storefront for I Am Church — premium coffee that helps fund ministry.",
+      "Rebuke Coffee is operated by I AM Church and sold to other churches as a premium coffee option for hospitality ministries that also supports our church ministry.",
     images: [ogImageUrl],
   },
 };
@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <CartProvider>
           {children}

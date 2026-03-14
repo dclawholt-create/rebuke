@@ -5,7 +5,7 @@ import { FormEvent, useState } from "react";
 export function NewsletterForm() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [message, setMessage] = useState("Join the list for launch updates and wholesale info.");
+  const [message, setMessage] = useState("Join the list for church partner updates and wholesale info.");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -42,7 +42,7 @@ export function NewsletterForm() {
         <input
           type="email"
           required
-          placeholder="Church email address"
+          placeholder="Church or ministry email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
           className="min-h-14 flex-1 rounded-full border border-white/12 bg-white/6 px-6 text-white outline-none transition placeholder:text-white/35 focus:border-[color:var(--accent)]"
@@ -52,7 +52,7 @@ export function NewsletterForm() {
           disabled={status === "loading"}
           className="min-h-14 rounded-full bg-[color:var(--accent)] px-6 font-medium text-black transition hover:bg-[color:var(--accent-strong)] disabled:cursor-not-allowed disabled:opacity-70"
         >
-          {status === "loading" ? "Submitting..." : "Get launch updates"}
+          {status === "loading" ? "Submitting..." : "Get church partner updates"}
         </button>
       </div>
       <p className={`text-sm ${status === "error" ? "text-red-300" : "text-white/60"}`}>{message}</p>
