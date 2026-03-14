@@ -5,14 +5,25 @@ import { Header } from "@/components/header";
 import { NewsletterForm } from "@/components/newsletter-form";
 import { collections, featuredProducts, slogans, stats } from "@/lib/site";
 
+const heroBackgroundImage =
+  "https://images.unsplash.com/photo-1631115609227-827c0147150e?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+const editorialCoffeeImage =
+  "https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
 export default function Home() {
   return (
     <main>
       <Header />
 
-      <section className="relative overflow-hidden px-6 pb-24 pt-14 lg:px-10 lg:pb-32 lg:pt-20">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-          <div>
+      <section className="relative overflow-hidden px-6 pb-24 pt-6 lg:px-10 lg:pb-32 lg:pt-8">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-40"
+          style={{ backgroundImage: `url(${heroBackgroundImage})` }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,3,3,0.4),rgba(4,3,3,0.82)_40%,rgba(4,3,3,0.98))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(211,163,107,0.22),transparent_28%),radial-gradient(circle_at_78%_18%,rgba(255,255,255,0.12),transparent_20%)]" />
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+          <div className="relative z-10">
             <div className="mb-6 inline-flex rounded-full border border-white/10 bg-white/6 px-4 py-2 text-xs uppercase tracking-[0.28em] text-white/60">
               Premium coffee for churches, teams, and ministry fundraising
             </div>
@@ -49,31 +60,47 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative z-10">
             <div className="absolute inset-0 blur-3xl" style={{ background: "var(--gold-glow)" }} />
             <div className="relative rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.03))] p-6 shadow-[0_30px_120px_rgba(0,0,0,0.45)] backdrop-blur-xl">
-              <div className="rounded-[1.75rem] border border-white/10 bg-[#120e0b] p-6">
-                <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/38">
-                  <span>Launch slogans</span>
-                  <span>Rebuke Coffee</span>
-                </div>
-                <div className="mt-8 space-y-4">
-                  {slogans.map((slogan, index) => (
-                    <div
-                      key={slogan}
-                      className={`rounded-2xl border px-5 py-4 text-lg tracking-[-0.03em] ${
-                        index === 0
-                          ? "border-[color:var(--accent)] bg-[rgba(211,163,107,0.12)] text-white"
-                          : "border-white/8 bg-white/4 text-white/78"
-                      }`}
-                    >
-                      {slogan}
+              <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#120e0b]">
+                <div
+                  className="relative min-h-[17rem] border-b border-white/10 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${editorialCoffeeImage})` }}
+                >
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,7,5,0.08),rgba(10,7,5,0.8))]" />
+                  <div className="absolute inset-x-0 bottom-0 p-6">
+                    <div className="inline-flex rounded-full border border-white/15 bg-black/30 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white/70">
+                      Brand direction
                     </div>
-                  ))}
+                    <div className="mt-4 max-w-sm text-2xl font-semibold tracking-[-0.04em] text-white">
+                      A coffee brand with warmth, shadow, and actual visual appetite.
+                    </div>
+                  </div>
                 </div>
-                <div className="mt-8 rounded-2xl border border-white/8 bg-white/4 p-5 text-sm leading-7 text-white/60">
-                  Elegant enough to feel premium. Clear enough to explain the mission.
-                  Strong enough to sell to churches that care about both hospitality and ministry impact.
+                <div className="p-6">
+                  <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-white/38">
+                    <span>Launch slogans</span>
+                    <span>Rebuke Coffee</span>
+                  </div>
+                  <div className="mt-6 space-y-4">
+                    {slogans.map((slogan, index) => (
+                      <div
+                        key={slogan}
+                        className={`rounded-2xl border px-5 py-4 text-lg tracking-[-0.03em] ${
+                          index === 0
+                            ? "border-[color:var(--accent)] bg-[rgba(211,163,107,0.12)] text-white"
+                            : "border-white/8 bg-white/4 text-white/78"
+                        }`}
+                      >
+                        {slogan}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-6 rounded-2xl border border-white/8 bg-white/4 p-5 text-sm leading-7 text-white/60">
+                    Elegant enough to feel premium. Clear enough to explain the mission.
+                    Strong enough to sell to churches that care about both hospitality and ministry impact.
+                  </div>
                 </div>
               </div>
             </div>
@@ -82,27 +109,39 @@ export default function Home() {
       </section>
 
       <section id="story" className="px-6 py-24 lg:px-10">
-        <div className="mx-auto grid max-w-7xl gap-10 rounded-[2rem] border border-white/10 bg-white/4 p-8 backdrop-blur-xl lg:grid-cols-[0.8fr_1.2fr] lg:p-12">
+        <div className="mx-auto grid max-w-7xl gap-10 rounded-[2rem] border border-white/10 bg-white/4 p-8 backdrop-blur-xl lg:grid-cols-[0.72fr_1.28fr] lg:p-12">
+          <div
+            className="relative min-h-[24rem] overflow-hidden rounded-[1.75rem] border border-white/10 bg-cover bg-center"
+            style={{ backgroundImage: `url(${editorialCoffeeImage})` }}
+          >
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,6,5,0.12),rgba(8,6,5,0.84))]" />
+            <div className="absolute inset-x-0 bottom-0 p-6">
+              <div className="text-xs uppercase tracking-[0.3em] text-white/58">Visual note</div>
+              <div className="mt-3 max-w-xs text-2xl font-semibold tracking-[-0.04em] text-white">
+                Moody café imagery keeps the ministry story from feeling generic.
+              </div>
+            </div>
+          </div>
           <div>
             <div className="text-xs uppercase tracking-[0.3em] text-white/45">The story</div>
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl">
               A church brand that doesn&apos;t look like church clipart.
             </h2>
-          </div>
-          <div className="space-y-6 text-base leading-8 text-white/68 sm:text-lg">
-            <p>
-              Rebuke Coffee is built for churches that want better hospitality, better branding, and a product people
-              actually want to buy. The visual direction leans premium and minimal — more like a modern lifestyle brand
-              than a typical fundraising page.
-            </p>
-            <p>
-              The mission is simple: sell excellent coffee to churches and coffee-loving supporters, then turn that
-              revenue into real ministry support for <span className="text-white">I Am Church</span>.
-            </p>
-            <p>
-              You can mention your Baptist affiliation in the story and trust language, while keeping the brand itself
-              broad enough to appeal to a wider Christian audience.
-            </p>
+            <div className="mt-8 space-y-6 text-base leading-8 text-white/68 sm:text-lg">
+              <p>
+                Rebuke Coffee is built for churches that want better hospitality, better branding, and a product people
+                actually want to buy. The visual direction leans premium and minimal — more like a modern lifestyle
+                brand than a typical fundraising page.
+              </p>
+              <p>
+                The mission is simple: sell excellent coffee to churches and coffee-loving supporters, then turn that
+                revenue into real ministry support for <span className="text-white">I Am Church</span>.
+              </p>
+              <p>
+                You can mention your Baptist affiliation in the story and trust language, while keeping the brand itself
+                broad enough to appeal to a wider Christian audience.
+              </p>
+            </div>
           </div>
         </div>
       </section>
